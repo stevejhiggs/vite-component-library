@@ -1,2 +1,2 @@
-export { default as Component } from "./Component";
-export { default as SvgTest } from "./SvgTest";
+export { default as Hello } from "./Components/Hello";
+export { default as SvgTest } from "./Components/SvgTest";
