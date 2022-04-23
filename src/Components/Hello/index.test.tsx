@@ -1,5 +1,9 @@
-import "jest";
+import { render, screen } from "@testing-library/react";
+import Hello from "./index";
 
-test("adds 1 + 2 to equal 3", () => {
-  expect(1 + 2).toBe(3);
+describe("Components -> Hello", () => {
+  test("renders the text: hello", () => {
+    render(<Hello />);
+    expect(screen.getByText("hello")).toBeInTheDocument();
+  });
 });

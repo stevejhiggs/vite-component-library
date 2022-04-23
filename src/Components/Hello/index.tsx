@@ -2,7 +2,7 @@ import React from "react";
 
 const Component: React.FC = () => (
   <>
-    <div>hello</div>
+    <h1>hello</h1>
   </>
 );
 
