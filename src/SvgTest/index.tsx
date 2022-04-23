@@ -1,8 +1,10 @@
 import React from "react";
+import Logo from "./vercel.svg";
 
 const Component: React.FC = () => (
   <>
-    <div>hello</div>
+    <div>svg test</div>
+    <Logo />
   </>
 );
 
