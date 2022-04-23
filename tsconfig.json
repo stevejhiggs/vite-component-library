@@ -7,6 +7,6 @@
     "module": "ES2022",
     "isolatedModules": true,
     "typeRoots": ["./@types", "./node_modules/@types"],
-    "types": ["assets", "jest"]
+    "types": ["assets", "jest", "node"]
   }
 }
