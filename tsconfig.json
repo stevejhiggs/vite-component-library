@@ -4,7 +4,9 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "module": "ES2022"
-  },
-  "include": ["src", "declarations.d.ts"]
+    "module": "ES2022",
+    "isolatedModules": true,
+    "typeRoots": ["./@types", "./node_modules/@types"],
+    "types": ["assets"]
+  }
 }
