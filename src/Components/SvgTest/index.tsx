@@ -5,6 +5,7 @@ const Component: React.FC = () => (
   <>
     <div>svg test</div>
     <Logo />
+    <div>fishy</div>
   </>
 );
 
