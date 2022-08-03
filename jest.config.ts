@@ -6,13 +6,27 @@
 export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
-  preset: "ts-jest",
+  testRegex: ".test.ts[x]?$",
+  transform: {
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        jsc: {
+          transform: {
+            react: {
+              runtime: "automatic",
+            },
+          },
+        },
+      },
+    ],
+  },
 
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
 
   // The test environment that will be used for testing
-  testEnvironment: "jsdom",
+  testEnvironment: "jest-environment-jsdom",
 
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 
