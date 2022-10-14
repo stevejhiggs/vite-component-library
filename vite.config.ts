@@ -26,13 +26,6 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'styled-components'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'styled-components': 'styled',
-        },
-      },
     },
   },
 })

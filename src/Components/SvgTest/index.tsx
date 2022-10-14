@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { hi } from "./hi";
-import { ReactComponent as Logo } from "./vercel.svg";
+import { hi } from './hi';
+import { ReactComponent as Logo } from './vercel.svg';
 
 const Component: React.FC = () => (
   <>
