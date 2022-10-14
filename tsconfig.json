@@ -4,8 +4,7 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
-    "declaration": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -14,11 +13,17 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react-jsxdev",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "typeRoots": ["./@types", "./node_modules/@types"],
-    "types": ["assets", "jest", "node"]
+    "types": ["assets", "node"]
   },
-  "include": ["src"],
+  "include": ["./src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
