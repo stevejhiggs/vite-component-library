@@ -1,6 +1,7 @@
 import React from "react";
-import Logo from "./vercel.svg";
+
 import { hi } from "./hi";
+import { ReactComponent as Logo } from "./vercel.svg";
 
 const Component: React.FC = () => (
   <>
