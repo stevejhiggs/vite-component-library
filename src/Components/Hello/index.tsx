@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Component: React.FC = () => (
+export type Props = {
+  name?: string;
+};
+
+const Component: React.FC<Props> = () => (
   <>
     <h1>hello</h1>
   </>
