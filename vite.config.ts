@@ -1,12 +1,16 @@
-/// <reference types="vitest" />
-
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import type { InlineConfig } from 'vitest';
+import type { UserConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 import dts from 'vite-plugin-dts';
 import checker from 'vite-plugin-checker';
 import { peerDependencies, dependencies } from './package.json';
+
+interface VitestConfigExport extends UserConfig {
+  test: InlineConfig;
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -46,4 +50,4 @@ export default defineConfig({
     // since parsing CSS is slow
     css: true,
   },
-});
+} as VitestConfigExport);
