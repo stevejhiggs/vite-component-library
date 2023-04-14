@@ -37,7 +37,7 @@ export default defineConfig({
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
+      external: [...Object.keys(peerDependencies || {}), ...Object.keys(dependencies || {})],
     },
     target: 'esnext',
     sourcemap: true,
