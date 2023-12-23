@@ -1,19 +1,12 @@
-/* eslint-disable import/export */
-import { cleanup, render } from '@testing-library/react';
-import { afterEach } from 'vitest';
-
-afterEach(() => {
-  cleanup();
-});
-
-const customRender = (ui: React.ReactElement, options = {}) =>
-  render(ui, {
-    // wrap provider(s) here if needed
-    wrapper: ({ children }) => children,
-    ...options,
-  });
-
+import '@testing-library/dom/types/queries';
+import { render as baseRender } from '@testing-library/react';
 export * from '@testing-library/react';
 export { default as userEvent } from '@testing-library/user-event';
+
+const AllTheProviders = ({ children }: { children?: React.ReactNode }) => {
+  return <>{children}</>;
+};
+
 // override render export
-export { customRender as render };
+export const render = (ui: React.ReactElement, options = {}) =>
+  baseRender(ui, { wrapper: AllTheProviders, ...options });

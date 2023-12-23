@@ -15,9 +15,7 @@ interface VitestConfigExport extends UserConfig {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      jsxRuntime: 'classic', // will generate much smaller output in library mode
-    }),
+    react(),
     svgr(),
     dts({
       insertTypesEntry: true,
@@ -33,14 +31,20 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src', 'index.ts'),
-      fileName: (ext) => `index.${ext}.js`,
-      formats: ['es', 'cjs'],
+      fileName: (ext) => `index.js`,
+      formats: ['es'],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies || {}), ...Object.keys(dependencies || {})],
+      external: [
+        ...Object.keys(peerDependencies || {}),
+        ...Object.keys(dependencies || {}),
+        'react',
+        'react/jsx-runtime',
+      ],
     },
     target: 'esnext',
     sourcemap: true,
+    copyPublicDir: false,
   },
   test: {
     globals: true,
